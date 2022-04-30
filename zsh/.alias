@@ -1,0 +1,290 @@
+
+alias vpn='sudo openvpn --config /home/ima/ima.ovpn'
+alias vpnt='sudo openvpn --config /home/ima/k35__ssl_vpn_config.ovpn'
+alias pcinf11='rdesktop -r disk:test=/home/ima/Descargas -u ima -d samudo.local -g 1280x720 10.0.17.100'
+alias vmtc1='rdesktop -r5 -r disk:test=/home/ima/Descargas -z 10.0.100.25 -f -u admintc -d vmtc1 -g 1920x1080'
+alias montar='sudo mount 192.168.1.21:/media/prot_data /mnt/prot'
+alias desmontar='sudo umount /mnt/prot'
+alias mpds='mpd /home/ima/.mpd/config'
+alias m='ncmpcpp'
+alias n='newsboat'
+alias np='newsboat -u ~/.config/newsboatp/urls -c ~/.config/newsboatp/cache.db -C ~/.config/newsboatp/config'
+alias t='tremc'
+alias d='docker'
+alias g='lazygit'
+alias o='xdg-open'
+alias ys='straw-viewer'
+alias src='sr -browser=w3m'
+alias lzg='lazygit'
+alias lzd='lazydocker'
+alias lzn='lazynpm'
+
+# vim and emacs
+alias v='lvim'
+alias em="/usr/bin/emacs -nw"
+#alias emacs="emacsclient -c -a 'emacs'"
+alias doomsync="~/.emacs.d/bin/doom sync"
+alias doomdoctor="~/.emacs.d/bin/doom doctor"
+alias doomupgrade="~/.emacs.d/bin/doom upgrade"
+alias doompurge="~/.emacs.d/bin/doom purge"
+
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias kubectl='sudo microk8s.kubectl'
+alias mvn-init="mvn archetype:generate -DgroupId=com.maringarcia -DartifactId=rx -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false"
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias cdt='cd $HOME/trabajo'
+alias cdd='cd $HOME/Descargas'
+alias cdc='cd ~/.config'
+alias cp='cp -iv'
+
+
+# Always enable colored `grep` output
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias ls='exa --icons --color=auto'
+alias cp='cp -i'  # confirm before overwriting something
+alias df='duf'
+#alias df='df -H -l'
+alias free='free -h ' # human readeble sizes
+alias cls='clear'
+alias h='history'
+alias hs='history | grep'
+alias q='exit'
+#alias setbg='feh --bg-fill --randomize $HOME/wallpapers/*'
+
+# Diff
+alias quickdiff='diff --side-by-side --suppress-common-lines -W 150'
+
+# taskwarrior
+alias tw='taskwarrior-tui'
+alias in='task add +in'
+
+tickle () {
+    deadline=$1
+    shift
+    task add +in +tickle wait:$deadline $@
+}
+
+waiting (){
+    task $1 modify -in +waiting
+}
+
+alias tick=tickle
+alias think='tickle +1d'
+
+
+
+# Git Mios
+alias gs='git status'
+alias ga='git add -A'
+alias gP='git push origin HEAD'
+alias gd='diff --color --color-words --abbrev'
+alias gdt='git dif --cached'
+alias gdt='git difftool'
+alias gb='git branch'
+alias gbd="git branch -d"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gps='git push'
+alias gp='git pull'
+alias gplr='find . -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git pull" \;'
+alias gm='git merge'
+alias gr="git rebase"
+alias gc='git commit -m'
+alias gl="git log --oneline --decorate --graph --pretty=format:'%C(auto)%h%d (%cr) %cn <%ce> %s'"
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+alias glga="git log --graph --oneline --all --decorate"
+alias grh='git reset --hard HEAD'
+
+# System
+alias bye='sudo shutdown -h now'
+alias update='sudo pacman -Syu'
+alias upgrade='yay -Syu'
+alias updatepis='ansible pi -u pi -m apt -a "upgrade=yes update_cache=yes" -b'
+alias clean='sudo apt-get autoclean && sudo apt-get autoremove'
+
+
+alias up='wakeonlan BA:D1:6D:8C:78:B7'
+alias hpilo='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 ima@192.168.1.20'
+alias vps='ssh ima@172.105.249.174'
+
+# Python
+alias ve='python3 -m venv ./venv'
+alias va='source ./venv/bin/activate'
+alias web='python3 -m http.server'
+
+
+# Spring Boot
+
+alias sbr='mvn spring-boot:run'
+alias sbs='mvn spring-boot:start'
+alias sps='mvn spring-boot:stop'
+alias sbb='mvn spring-boot:build-image'
+
+# Docker 
+alias dstart='docker container ls -f "status=exited" | tail -n +2 | fzf  | cut -d " " -f 1  |  xargs  -I{} docker start "{}"'
+alias dstop='docker container ls -f "status=running" | tail -n +2 | fzf  | cut -d " " -f 1  |  xargs  -I{} docker stop "{}"'
+
+# Extra
+#alias config='nvim /home/imarin/.config/i3/config'
+#alias configq='nvim /home/imarin/.config/qtile/config.py'
+#alias configb='nvim /home/imarin/.config/i3blocks/config'
+#alias init='nvim /home/imarin/.config/nvim/init.vim'
+alias tiempo='curl "wttr.in/Azkoitia?lang=es"'
+alias tiempon='curl "wttr.in/Azkoitia?0&lang=es"'
+alias trpi='transmission-remote-cli -c 192.168.1.18:9091'
+alias trhp='transmission-remote-cli -c 192.168.1.21:9091'
+alias s='googler'
+alias latexmkp='latexmk -pdf -pvc'
+
+# sudo apt install fortunes fortunes-es fortunes-es-off lolcat
+
+# fortune -l | cowsay
+
+# sudo apt install pandoc lynx
+
+mds() { pandoc $1 | w3m -T text/html;}
+rse() { du -a .| cut -f2 | fzf | xargs -I {} nvim '{}'; }
+rsi() { du . | cut -f2 | grep -e "*.jpg$" | fzf | xargs -I {} sxiv '{}'; }
+rsv() { find $(pwd -P)  -type f -name "*.mp4" -o -name "*.MTS" -o -name "*.mpv" | fzf --multi >/tmp/mpv && mpv --playlist=/tmp/mpv; rm /tmp/mpv }
+rspdf() { du -a .| cut -f2 | grep  -e ".pdf$" | fzf | xargs -I {} zathura '{}'; }
+tv() { more ~/.config/canales.tv | fzf -d ";" --nth=1 --with-nth=1 -e | cut -f2 -d ";" | xargs -I{} mpv '{}'; }
+# fzf improvement
+function fzf-lovely(){
+
+        if [ "$1" = "h" ]; then
+                fzf -m --reverse --preview-window down:20 --preview '[[ $(file --mime {}) =~ binary ]] &&
+                        echo {} is a binary file ||
+                         (bat --style=numbers --color=always {} ||
+                          highlight -O ansi -l {} ||
+                          coderay {} ||
+                          rougify {} ||
+                          cat {}) 2> /dev/null | head -500'
+
+        else
+                fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
+                                 echo {} is a binary file ||
+                                 (bat --style=numbers --color=always {} ||
+                                  highlight -O ansi -l {} ||
+                                  coderay {} ||
+                                  rougify {} ||
+                                  cat {}) 2> /dev/null | head -500'
+        fi
+}
+
+fd() {
+  preview="git diff $@ --color=always -- {-1}"
+  git diff $@ --name-only | fzf -m --ansi --preview $preview
+}
+
+
+fdc() {
+  preview="git diff --cached  $@ --color=always -- {-1}"
+  git diff $@ --name-only | fzf -m --ansi --preview $preview
+}
+
+fp() {
+    fzf --preview 'bat {-1} --color=always'
+}
+
+# Select a docker container to start and attach to
+function dcstart() {
+  local cid
+  cid=$(docker ps -a | sed 1d | fzf -1 -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker start "$cid"
+}
+
+# Select a running docker container to stop
+function dcstop() {
+  local cid
+  cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker stop "$cid"
+}
+
+
+# Set 'man' colors
+function man() {
+    env \
+    LESS_TERMCAP_mb=$'\e[01;31m' \
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    man "$@"
+}
+
+#
+# # ex - archive extractor
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+
+primereact-install()
+{
+    green=`tput setaf 2`
+
+    echo "${green}****************************************"
+    echo "${green}Installing primereact"
+    echo "${green}****************************************"
+    npm install primereact
+
+
+    echo "${green}****************************************"
+    echo "${green}*Installing primeicons"
+    echo "${green}****************************************"
+    npm install primeicons
+
+    echo "${green}****************************************"
+    echo "${green}*Installing primeflex"
+    echo "${green}****************************************"
+    npm install primeflex
+
+    echo "${green}****************************************"
+    echo "${green}*Installing react-transition-group"
+    echo "${green}****************************************"
+    npm install react-transition-group
+
+    echo "${green}****************************************"
+    echo "${green}*Installing classnames"
+    echo "${green}****************************************"
+    npm install classnames
+    
+    echo "${green}****************************************"
+    echo "${green}*Installing quill.js"
+    echo "${green}****************************************"
+    npm install quill
+}
+
+
+
