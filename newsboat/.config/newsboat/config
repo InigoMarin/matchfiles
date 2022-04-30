@@ -1,0 +1,113 @@
+# -- feeds ---------------------------------------------------------------------
+
+auto-reload yes
+reload-threads 4
+download-retries 4
+download-timeout 10
+prepopulate-query-feeds yes
+confirm-mark-feed-read no
+external-url-viewer "urlscan -dc -r 'linkhandler {}'"
+
+# --- keys -------------------------------------------------------------------
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+
+# -- display -------------------------------------------------------------------
+feed-sort-order title
+show-read-feeds no
+
+
+
+color info default default reverse
+color listnormal_unread yellow default
+color listfocus white default reverse bold
+color listfocus_unread blue default reverse bold
+color article cyan default
+
+
+highlight article     "(^Feed:.*|^Title:.*|^Author:.*)"     red      default
+highlight article     "(^Link:.*|^Date:.*)"                 white    default
+highlight article     "^Podcast Download URL:.*"            cyan     default
+highlight article     "^Links:"                             magenta  black    underline
+highlight article     "https?://[^ ]+"                      green    default
+highlight article     "^(Title):.*$"                        blue     default
+highlight article     "\\[[0-9][0-9]*\\]"                   magenta  default  bold
+highlight article     "\\[image\\ [0-9]+\\]"                green    default  bold
+highlight article     "\\[embedded flash: [0-9][0-9]*\\]"   green    default  bold
+highlight article     ":.*\\(link\\)$"                      cyan     default
+highlight article     ":.*\\(image\\)$"                     blue     default
+highlight article     ":.*\\(embedded flash\\)$"            magenta  default
+
+
+highlight feedlist "A .*"  white default
+highlight feedlist "YOUTUBE: .*" red default
+highlight feedlist "NEWSFEED: .*" green default
+highlight feedlist "REEDIT: .*" white default
+highlight feedlist "GITHUB: .*" magenta default
+highlight feedlist "TORRENT: .*" cyan default
+highlight feedlist "TWITCH: .*" blue default
+
+text-width 80
+
+browser linkhandler
+macro , open-in-browser
+macro v set browser "setsid nohup mpv %u"; open-in-browser ; set browser linkhandler
+macro t set browser "transadd %u"; open-in-browser ; set browser linkhandler
+macro a set browser "maxitorrent %u"; open-in-browser ; set browser linkhandler
+macro w set browser "w3m %u"; open-in-browser ; set browser linkhandler
+macro c set browser "sr google $(xsel -p)" ; open-in-browser ; set browser linkhandler
+macro i set browser "imdb"; open-in-browser ; set browser linkhandler
+macro r set browser "tuir %u"; open-in-browser ; set browser  linkhandler
+macro f set browser "filmaffinity"; open-in-browser ; set browser linkhandler
+
+#------------------------------------
+#Install dependecies"
+#sudo apt-get install task-spooler
+#sudo apt-get install youtube-dl
+#------------------------------------
+
+macro d set browser "dmenuhandler"; open-in-browser ; set browser linkhandler
+
+download-path   "~/Descargas/rss/%n"
+save-path       "~/Descargas/rss"
+reload-threads  20
+cleanup-on-quit yes
+text-width      74
+
+bind-key - quit
+bind-key G end
+bind-key g home
+bind-key j down
+bind-key k up
+
+confirm-exit no
+cleanup-on-quit yes
+
+
+
+## - ttrss access -----
+
+#urls-source "ttrss"
+#ttrss-url ""
+#ttrss-login ""
+#ttrss-password ""
+
+# -- shortcuts -----
+#ttrss-flag-star "s"
+#ttrss-flag-publish "p"
