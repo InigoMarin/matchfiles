@@ -1,0 +1,20 @@
+[user]
+	email = inigomaringarcia@gmail.com
+	name = Iñigo Marin
+  user = InigoMarin
+[credential]
+	helper = cache --timeout=3600
+[difftool]
+  prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+    tool = meld
+[mergetool "meld"]
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"# automatically launch merge tool without displaying a prompt
+[mergetool]
+  prompt = false
+[core]
+	excludesfile = /home/ima/.gitignore
+[github]
+	user = InigoMarin
