@@ -1,10 +1,15 @@
 
-stow alacritty
-stow cava
-stow fonts
-stow git
-stow kitty
+music(){
+
+green=`tput setaf 2`
+
+echo "${green}****************************************"
+echo "${green}->Installing music packages"
+echo "${green}****************************************"
+
+sudo pacman -S - < ./archlinux/pkgmusic.lst
 stow mpd
+stow ncmpcpp
 
 touch ~/.mpd/db
 touch ~/.mpd/mpdstate
@@ -12,9 +17,20 @@ touch ~/.mpd/mpd.pid
 touch ~/.mpd/mpd.log
 touch ~/.mpd/mpd.error
 
-stow ncmpcpp
+}
+
+
+
+stow alacritty
+stow cava
+stow fonts
+stow git
+stow kitty
+
+music
+
 stow newsboat
-stows sxiv
+stow sxiv
 stow tmux
 stow volumeicon
 stow wallpapers
