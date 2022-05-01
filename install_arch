@@ -1,0 +1,21 @@
+
+stow alacritty
+stow cava
+stow fonts
+stow git
+stow kitty
+stow mpd
+
+touch ~/.mpd/db
+touch ~/.mpd/mpdstate
+touch ~/.mpd/mpd.pid
+touch ~/.mpd/mpd.log
+touch ~/.mpd/mpd.error
+
+stow ncmpcpp
+stow newsboat
+stows sxiv
+stow tmux
+stow volumeicon
+stow wallpapers
+stow zsh
