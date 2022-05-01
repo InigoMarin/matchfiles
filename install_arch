@@ -7,7 +7,7 @@ echo "${green}****************************************"
 echo "${green}->Installing music packages"
 echo "${green}****************************************"
 
-sudo pacman -S - < ./archlinux/pkgmusic.lst
+sudo pacman -S mpd mpc ncmpcpp
 stow mpd
 stow ncmpcpp
 
@@ -17,12 +17,12 @@ touch ~/.mpd/mpd.pid
 touch ~/.mpd/mpd.log
 touch ~/.mpd/mpd.error
 
+yay -S cava
+stow cava
+
 }
 
-
-
 stow alacritty
-stow cava
 stow fonts
 stow git
 stow kitty
