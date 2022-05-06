@@ -4,3 +4,4 @@ mpd/.mpd/mpd.error
 mpd/.mpd/mpd.log
 mpd/.mpd/mpd.pid
 mpd/.mpd/mpdstate
+ncmpcpp/.config/ncmpcpp/error.log
