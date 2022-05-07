@@ -74,7 +74,7 @@ local filemanager = "thunar"
 local mailclient = "geary"
 local mediaplayer = "vlc"
 local scrlocker = "i3lock -t -i /home/ima/wallpapers/screenlock/lock.png"
-local terminal = "kitty"
+local terminal = os.getenv("TERMINAL") or "alacritty"
 local virtualmachine = "virtualbox"
 
 -- awesome variables
@@ -1143,6 +1143,7 @@ end
 --run_once("nm-applet")
 run_once("compton")
 run_once("dunst")
+run_once("setxkbmap es")
 run_once("setxkbmap -option caps:escape")
 --run_once("mpd-notification")
 run_once("feh --bg-max --randomize $HOME/wallpapers/*")
