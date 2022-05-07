@@ -3,7 +3,7 @@ export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 # Default programs:
 export EDITOR="nvim"
 export VISUAL="nvim"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="brave"
 export BROWSERCLI="w3m"
 export LANG=es_ES.UTF-8
