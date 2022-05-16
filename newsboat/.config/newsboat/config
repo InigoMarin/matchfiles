@@ -69,11 +69,9 @@ browser linkhandler
 macro , open-in-browser
 macro v set browser "setsid nohup mpv %u"; open-in-browser ; set browser linkhandler
 macro t set browser "transadd %u"; open-in-browser ; set browser linkhandler
-macro a set browser "maxitorrent %u"; open-in-browser ; set browser linkhandler
 macro w set browser "w3m %u"; open-in-browser ; set browser linkhandler
 macro c set browser "sr google $(xsel -p)" ; open-in-browser ; set browser linkhandler
 macro i set browser "imdb"; open-in-browser ; set browser linkhandler
-macro r set browser "tuir %u"; open-in-browser ; set browser  linkhandler
 macro f set browser "filmaffinity"; open-in-browser ; set browser linkhandler
 
 #------------------------------------
@@ -82,7 +80,8 @@ macro f set browser "filmaffinity"; open-in-browser ; set browser linkhandler
 #sudo apt-get install youtube-dl
 #------------------------------------
 
-macro d set browser "dmenuhandler"; open-in-browser ; set browser linkhandler
+macro d set browser "rofihandler"; open-in-browser ; set browser linkhandler
+macro m set browser "fzfhandler"; open-in-browser ; set browser linkhandler
 
 download-path   "~/Descargas/rss/%n"
 save-path       "~/Descargas/rss"
