@@ -977,9 +977,9 @@ awful.rules.rules = {
 
 	{ rule = { class = "Vlc" }, properties = { maximized = true } },
 
-	{ rule = { class = "Postman" }, properties = { maximized = true, tag = " API " } },
-
-	{ rule = { class = "KeePass2" }, properties = { maximized = true, tag = " PASS " } },
+	{ rule = { class = "Postman" }, properties = { maximized = true, tag = " API ", switchtotag = true } },
+	{ rule = { class = "KeePass2" }, properties = { maximized = true, tag = " PASS ", switchtotag = true } },
+	{ rule = { class = "obsidian" }, properties = { maximized = true, tag = " DOC ", switchtotag = true } },
 
 	{
 		rule = { instance = "crx_fmgjjmmmlfnkbppncabfkddbjimcfncm" },
