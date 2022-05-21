@@ -98,7 +98,7 @@ bind-key k up
 confirm-exit no
 cleanup-on-quit yes
 
-
+bind-key . toggle-show-read-feeds
 
 ## - ttrss access -----
 
